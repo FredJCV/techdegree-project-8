@@ -1,0 +1,232 @@
+/* General Styling */
+body {
+    position: relative;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    color: #39434ba1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5em;
+    padding-bottom: 1.5em;
+}
+
+header,
+main {
+    width: 92%;
+    max-width: 1285px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #4b4b4b;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+h1,
+.search-bar {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    color: #39434b;
+}
+
+/* Search Styling */
+.search-bar {
+    width: 250px;
+    padding: .5em;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    opacity: .8;
+}
+
+/* Employee Grid */
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-row-gap: 30px;
+    grid-template-columns: 250px;
+    padding-bottom: 3em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 2px solid #39434b28;
+    padding: 1.7em 0;
+    transition: .5s;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: #39434b28;
+    transition: .5s;
+}
+
+.avatar,
+.text-container {
+    margin: auto;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 125px;
+    width: 125px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.name,
+.email,
+.address {
+    margin: 0 auto .5em;
+}
+
+.name,
+.address {
+    text-transform: capitalize;
+}
+
+.email,
+.address {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.name { 
+    font-size: 20px;
+}
+
+/* Modal Window */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4);
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    width: 250px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    border-radius: 5px;
+    padding: 30px 20px;
+}
+
+.modal-content .avatar {
+    height: 160px;
+    width: 160px;
+    margin: 1em auto;
+}
+
+.text-container hr {
+    width: 90%;
+    border: none;
+    border-top: 1px solid #39434b57;
+    margin-top: 1em;
+}
+
+.modal-prev,
+.modal-next,
+.modal-close {
+    position: absolute;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: 100;
+}
+
+.modal-close {
+    right: 30px;
+    top: 5px;
+    font-size: 20px;
+}
+
+.modal-prev,
+.modal-next {
+    top: 50%;
+    font-size: 50px;
+    opacity: .3;
+    transition: .5s;
+}
+
+.modal-prev:hover,
+.modal-next:hover {
+    opacity: 1;
+    transition: .5s;
+}
+
+.modal-prev {
+    left: 0;
+}
+
+.modal-next {
+    right: 0;
+}
+
+/* Media Queries */
+@media (min-width: 450px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, 405px);
+        grid-column-gap: 35px;
+    }
+
+    .card {
+        flex-direction: row;
+        padding: 1.7em;
+    }
+
+    .card .text-container {
+        text-align: left;
+    }
+
+    .name,
+    .email,
+    .address {
+        margin: 0 0 .5em;
+    }
+
+    .modal {
+        width: 375px;
+    }
+}
+
+@media (min-width: 934px) {
+    header {
+        flex-direction: row;
+    }
+
+    h1 {
+        margin-left: 0;
+    }
+
+    .search-bar {
+        margin-right: 0;
+        width: 40%;
+    }
+}
